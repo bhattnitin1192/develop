@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+	<bean id="Elephant" class="com.nitin.spring.bean.Animal">
+		<property name="name" value="Richard" />
+		<property name="type" value="Elephant" />
+	</bean>
+	<bean id="lion" class="com.nitin.spring.bean.Animal">
+		<property name="name" value="Igor" />
+		<property name="type" value="lion" />
+	</bean>
+
+
+	<bean id="snake" class="com.nitin.spring.bean.Animal">
+		<property name="name" value="Bob" />
+		<property name="type" value="snake" />
+	</bean>
+
+	<bean id="jungle" class="com.nitin.spring.bean.Jungle">
+		<property name="foods">
+			<props>
+				<prop key="gorilla">banana</prop>
+				<prop key="lion">Beef</prop>
+				<prop key="snake">rat</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

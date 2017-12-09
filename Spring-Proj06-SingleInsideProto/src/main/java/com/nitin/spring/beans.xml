@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="RequestProcessor" class="com.nitin.spring.bean.RequestProcessor" scope="prototype">
+         <property name="resourceB" ref="resourceB2"/>
+         
+	</bean>
+
+	<bean id="resourceB2" class="com.nitin.spring.bean.ResourceB" scope="singleton"/>
+          
+</beans>

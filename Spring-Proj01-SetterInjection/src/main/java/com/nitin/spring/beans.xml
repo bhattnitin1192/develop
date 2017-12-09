@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="person" class="com.nitin.spring.bean.Person">
+		<constructor-arg value="123" name="id">
+
+		</constructor-arg>
+		<constructor-arg value="Nitin" name="name"></constructor-arg>
+		<property name="taxId" value="123" />
+		<!--<value>123</value> -->
+	</bean>
+
+</beans>

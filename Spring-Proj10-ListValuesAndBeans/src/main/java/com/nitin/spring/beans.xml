@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="basket" class="com.nitin.spring.bean.FruitBasket">
+		<constructor-arg>
+			<value>Nitin Bhatt</value>
+		</constructor-arg>
+
+		<constructor-arg>
+			<!-- <list> <value>Apple</value> <value>Orange</value> <value>PineApple</value> 
+				<value>PineApple</value> <value>Grapes</value> </list> -->
+			<set>
+				<value>Apple</value>
+				<value>Orange</value>
+				<value>PineApple</value>
+				<value>PineApple</value>
+				<value>Grapes</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="lion" class="com.nitin.spring.bean.Animal">
+		<property name="name" value="Igor" />
+		<property name="type" value="lion" />
+	</bean>
+
+	<bean id="Elephant" class="com.nitin.spring.bean.Animal">
+		<property name="name" value="Richard" />
+		<property name="type" value="Elephant" />
+	</bean>
+
+	<bean id="snake" class="com.nitin.spring.bean.Animal">
+		<property name="name" value="Bob" />
+		<property name="type" value="snake" />
+	</bean>
+
+
+	<bean id="jungle" class="com.nitin.spring.bean.Jungle">
+		<property name="largest" ref="Elephant" />
+		<property name="animals">
+			<list>
+				<ref bean="snake" />
+				<ref bean="lion" />
+				<ref bean="Elephant" />
+			</list>
+		</property>
+	</bean>
+</beans>

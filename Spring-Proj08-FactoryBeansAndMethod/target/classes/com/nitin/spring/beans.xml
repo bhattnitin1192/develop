@@ -1,0 +1,42 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="person" class="com.nitin.spring.bean.Person"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
+		<constructor-arg value="123" name="id">
+
+		</constructor-arg>
+		<constructor-arg value="Nitin" name="name"></constructor-arg>
+		<property name="taxId" value="123" />
+		<property name="address" ref="address"></property>
+		<!--<value>123</value> -->
+	</bean>
+
+
+	<bean id="person2" class="com.nitin.spring.bean.Person"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="createPerson" factory-bean="personFactory">
+		<constructor-arg value="456" name="id">
+
+		</constructor-arg>
+		<constructor-arg value="Vivek" name="name"></constructor-arg>
+		<property name="taxId" value="000" />
+		<property name="address" ref="address"></property>
+		<!--<value>123</value> -->
+	</bean>
+
+	<bean id="address" class="com.nitin.spring.bean.Address">
+	<constructor-arg name="street">
+	<value>Naya Bazar</value>
+	</constructor-arg>
+	<constructor-arg>
+	<value>263139</value>
+	</constructor-arg>
+</bean>
+	<bean id="personFactory"
+		class="com.nitin.spring.bean.PersonFactory">
+	</bean>
+</beans>
